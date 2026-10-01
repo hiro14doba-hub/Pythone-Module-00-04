@@ -62,7 +62,8 @@ def test_ft_exercise(exercise_file_name):
         )
 
     except AttributeError:
-        print(f"笶� Could not find function {exercise_file_name}() in your file")
+        print(
+            f"笶� Could not find function {exercise_file_name}() in your file")
         print(f"   Make sure you have: def {exercise_file_name}():")
 
     except TypeError as error:
