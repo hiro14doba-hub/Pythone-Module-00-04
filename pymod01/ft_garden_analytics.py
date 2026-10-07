@@ -141,7 +141,7 @@ class Vegetable(Plant):
     def show(self) -> None:
         super().show()
         print(f"Harvest season: {self._harvest_season}")
-        print(f"Nutritional value: {self._nutritional_value}")
+        print(f"Nutritional value: {int(self._nutritional_value)}")
 
 
 def display_statistics(plant: Plant) -> None:
