@@ -5,8 +5,7 @@ class Plant:
         self.old = old
 
     def show(self) -> None:
-        print((self.name)+": "+str(self.height) +
-              "cm, "+str(self.old)+" days old")
+        print(f"{self.name}: {self.height}cm, {self.old} days old")
 
 
 if __name__ == "__main__":

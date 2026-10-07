@@ -24,7 +24,7 @@ if __name__ == "__main__":
     plant1.show()
     start_height = plant1.height
     for i in range(1, 8):
-        print("=== Day " + str(i)+" ===")
+        print("=== Day " + str(i) + " ===")
         plant1.grow()
         plant1.age()
         plant1.show()
