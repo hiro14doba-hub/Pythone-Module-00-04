@@ -5,6 +5,15 @@ class Plant:
             self._age_count = 0
             self._show_count = 0
 
+        def record_grow(self) -> None:
+            self._grow_count += 1
+
+        def record_age(self) -> None:
+            self._age_count += 1
+
+        def record_show(self) -> None:
+            self._show_count += 1
+
         def display(self) -> None:
             print(
                 f"Stats: {self._grow_count} grow, {self._age_count} age, "
@@ -13,16 +22,13 @@ class Plant:
 
     def __init__(self, name: str, height: float, age: int) -> None:
         self._name = name
-        self._height = height
-        self._age = age
+        self._height = height if height >= 0 else 0.0
+        self._age = age if age >= 0 else 0
         self._status = self.Status()
 
     @staticmethod
     def check_years_old(age: int) -> bool:
-        if age > 365:
-            return True
-        else:
-            return False
+        return age > 365
 
     @classmethod
     def anonymous(cls) -> "Plant":
@@ -30,7 +36,7 @@ class Plant:
 
     def show(self) -> None:
         print(f"{self._name}: {self._height}cm, {self._age} days old")
-        self._status._show_count += 1
+        self._status.record_show()
 
     def get_height(self) -> float:
         return self._height
@@ -46,18 +52,17 @@ class Plant:
 
     def set_age(self, new_age: int) -> None:
         if new_age < 0:
-            print(f"{self._name}: Error, age can't be negative ")
+            print(f"{self._name}: Error, age can't be negative")
         else:
             self._age = new_age
 
     def grow(self) -> None:
-        self._height = self._height + 2.1
-        self._height = round(self._height, 1)
-        self._status._grow_count += 1
+        self._height = round(self._height + 2.1, 1)
+        self._status.record_grow()
 
     def age(self) -> None:
-        self._age = self._age + 1
-        self._status._age_count += 1
+        self._age += 1
+        self._status.record_age()
 
 
 class Flower(Plant):
@@ -78,7 +83,7 @@ class Flower(Plant):
             print(f"{self._name} has not bloomed yet")
 
 
-class Seed (Flower):
+class Seed(Flower):
     def __init__(self, name: str, height: float, age: int, color: str) -> None:
         super().__init__(name, height, age, color)
         self._seeds = 0
@@ -98,6 +103,9 @@ class Tree(Plant):
             super().__init__()
             self._produce_shade_count = 0
 
+        def record_shade(self) -> None:
+            self._produce_shade_count += 1
+
         def display(self) -> None:
             super().display()
             print(f"{self._produce_shade_count} shade")
@@ -107,7 +115,7 @@ class Tree(Plant):
     ) -> None:
         super().__init__(name, height, age)
         self._trunk_diameter = trunk_diameter
-        self._status: Tree.Status = self.Status()
+        self._status = self.Status()
 
     def produce_shade(self) -> None:
         print(
@@ -115,7 +123,7 @@ class Tree(Plant):
             f"{self._height}cm long and "
             f"{self._trunk_diameter}cm wide."
         )
-        self._status._produce_shade_count += 1
+        self._status.record_shade()
 
     def show(self) -> None:
         super().show()
@@ -124,11 +132,11 @@ class Tree(Plant):
 
 class Vegetable(Plant):
     def __init__(
-            self, name: str, height: float, age: int, harvest_season: str
+        self, name: str, height: float, age: int, harvest_season: str
     ) -> None:
         super().__init__(name, height, age)
         self._harvest_season = harvest_season
-        self._nutritional_value: float = 0
+        self._nutritional_value: float = 0.0
 
     def grow(self) -> None:
         super().grow()

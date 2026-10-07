@@ -96,10 +96,6 @@ class Vegetable(Plant):
 if __name__ == "__main__":
     print("=== Garden Plant Types ===")
 
-    print("=== Plant")
-    plant = Plant("Rose", 25.0, 30)
-    plant.show()
-
     print("=== Flower")
     flower = Flower("Rose", 15.0, 10, "red")
     flower.show()

@@ -28,5 +28,5 @@ if __name__ == "__main__":
         plant1.grow()
         plant1.age()
         plant1.show()
-    total_growth = round(plant1.height-start_height, 1)
+    total_growth = round(plant1.height - start_height, 1)
     print("Growth this week: " + str(total_growth) + "cm")
