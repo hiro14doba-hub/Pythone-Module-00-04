@@ -19,7 +19,7 @@ def main() -> None:
         if len(score) == 0:
             print(
                 "No scores provided. Usage: python3 "
-                "ft_score_analytics.py <score1>"" <score2> ")
+                "ft_score_analytics.py <score1>"" <score2> ...")
         else:
             print(f"Scores processed: {score}")
             print(f"Total players: {len(score)}")

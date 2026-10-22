@@ -11,8 +11,8 @@ def main() -> None:
     else:
         received_args = program_total - 1
         print(f"Arguments received: {received_args}")
-        for i, arg in enumerate(sys.argv[1:], start=1):
-            print(f"Argument {i}: {arg}")
+        for i in range(1, program_total):
+            print(f"Argument {i}: {sys.argv[i]}")
     print(f"Total arguments: {program_total}")
 
 

@@ -27,12 +27,12 @@ def main() -> None:
     pos1 = get_player_pos()
     print(f"Got a first tuple: {pos1}")
     print(f"It includes: X={pos1[0]}, Y={pos1[1]}, Z={pos1[2]}")
-    dis_center = math.sqrt(pos1[0]**2+pos1[1]**2+pos1[2]**2)
+    dis_center = math.sqrt(pos1[0] ** 2+pos1[1] ** 2+pos1[2] ** 2)
     print(f"Distance to center: {round(dis_center,4)}")
     print("Get a second set of coordinates")
     pos2 = get_player_pos()
     dis_between = math.sqrt(
-        (pos1[0]-pos2[0])**2+(pos1[1]-pos2[1])**2+(pos1[2]-pos2[2])**2)
+        (pos1[0]-pos2[0])**2 + (pos1[1]-pos2[1])**2 + (pos1[2]-pos2[2])**2)
     print(
         f"Distance between the 2 sets of coordinates: {round(dis_between,4)}")
 

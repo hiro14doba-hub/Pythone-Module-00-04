@@ -1,23 +1,23 @@
 import random
 
 
-def get_player_archievements() -> set:
-    all_archievements = ["Crafting Genius", "World Savior", "Master Explorer",
-                         "Collector Supreme", "Untouchable", "Boss Slayer",
-                         "Strategist", "Unstoppable", "Speed Runner",
-                         "Survivor", "Treasure Hunter", "First Steps",
-                         "Sharp Mind", "Hidden Path Finder"]
-    number_archiev = random.randint(5, 11)
-    player_archievements = random.sample(all_archievements, number_archiev)
-    return set(player_archievements)
+def gen_player_achievements() -> set:
+    all_achievements = ["Crafting Genius", "World Savior", "Master Explorer",
+                        "Collector Supreme", "Untouchable", "Boss Slayer",
+                        "Strategist", "Unstoppable", "Speed Runner",
+                        "Survivor", "Treasure Hunter", "First Steps",
+                        "Sharp Mind", "Hidden Path Finder"]
+    number_achiev = random.randint(5, 11)
+    player_achievements = random.sample(all_achievements, number_achiev)
+    return set(player_achievements)
 
 
 def main() -> None:
     print("=== Achievement Tracker System ===")
-    alice = get_player_archievements()
-    bob = get_player_archievements()
-    charlie = get_player_archievements()
-    dylan = get_player_archievements()
+    alice = gen_player_achievements()
+    bob = gen_player_achievements()
+    charlie = gen_player_achievements()
+    dylan = gen_player_achievements()
     print(f"Player Alice: {alice}")
     print(f"Player Bob: {bob}")
     print(f"Player Charlie: {charlie}")

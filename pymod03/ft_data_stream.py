@@ -25,7 +25,7 @@ def main() -> None:
         event = next(event_stream)
         print(f"Event {i}: Player {event[0]} did action {event[1]}")
     ten_events = [next(event_stream) for _ in range(10)]
-    print(f"Builtlist of 10 events: {ten_events}")
+    print(f"Built list of 10 events: {ten_events}")
     for event in consume_event(ten_events):
         print(f"Got event from list: {event}")
         print(f"Remains in list: {ten_events}")
