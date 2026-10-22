@@ -6,13 +6,16 @@ def get_player_pos() -> tuple:
         user_input = input(
             "Enter new coordinates as floats in format 'x,y,z': ")
         parts = user_input.split(',')
-        error_found = False
-        if len(parts) != 3:
+        try:
+            x_str, y_str, z_str = parts
+        except ValueError:
             print("Invalid syntax")
             continue
-        for part in parts:
+        error_found = False
+        coords = []
+        for part in (x_str, y_str, z_str):
             try:
-                float(part)
+                coords.append(float(part))
             except ValueError as e:
                 print(f"Error on parameter '{part}': {e}")
                 error_found = True
