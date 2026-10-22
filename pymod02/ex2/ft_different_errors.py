@@ -1,16 +1,17 @@
-def garden_operations(operation_number: int)->None:
-    if operation_number==0:
+def garden_operations(operation_number: int) -> None:
+    if operation_number == 0:
         int("abc")
-    elif operation_number ==1:
-        _ = 1/0
+    elif operation_number == 1:
+        _ = 1 / 0
     elif operation_number == 2:
         open('/non/existent/file')
     elif operation_number == 3:
-        _ = "string"+1
+        _ = "string" + 1
     else:
         print("Operation completed successfully")
 
-def test_error_types()->None:
+
+def test_error_types() -> None:
     print("=== Garden Error Types Demo ===")
     for op in range(5):
         print(f"Testing operation {op}...")
@@ -26,8 +27,10 @@ def test_error_types()->None:
             print(f"Caught TypeError: {e}")
     print("All error types tested successfully!")
 
-def main()->None:
+
+def main() -> None:
     test_error_types()
+
 
 if __name__ == "__main__":
     main()
