@@ -24,22 +24,22 @@ def main() -> None:
     number_of_items = len(inventory)
     total_items = sum(inventory.values())
     print(f"Total quantity of the {number_of_items} items: {total_items}")
-    for item_name, quantity in inventory.items():
-        percentage = quantity / total_items * 100
-        print(f"Item {item_name} represents {round(percentage,1)}%")
+    if total_items > 0:
+        for item_name, quantity in inventory.items():
+            percentage = quantity / total_items * 100
+            print(f"Item {item_name} represents {round(percentage,1)}%")
 
-    most_item = max(inventory, key=inventory.get)
-    least_item = min(inventory, key=inventory.get)
+        most_item = max(inventory, key=inventory.get)
+        least_item = min(inventory, key=inventory.get)
 
-    print(
-        f"Item most abundant: {most_item} "
-        f"with quantity {inventory[most_item]}"
-    )
-    print(
-        f"Item least abundant: {least_item} "
-        f"with quantity {inventory[least_item]}"
-    )
-
+        print(
+            f"Item most abundant: {most_item} "
+            f"with quantity {inventory[most_item]}"
+        )
+        print(
+            f"Item least abundant: {least_item} "
+            f"with quantity {inventory[least_item]}"
+        )
     inventory.update({"magic_item": 1})
     print(f"Updated inventory: {inventory}")
 
