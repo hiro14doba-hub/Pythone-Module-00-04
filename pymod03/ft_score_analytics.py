@@ -1,19 +1,25 @@
 import sys
-def main()->None:
+
+
+def main() -> None:
     score = []
     print("=== Player Score Analytics ===")
     program_total = len(sys.argv)
-    if program_total== 1:
-        print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+    if program_total == 1:
+        print(
+            "No scores provided. Usage: python3 ft_score_analytics.py "
+            "<score1> <score2> ...")
     else:
         for arg in sys.argv[1:]:
             try:
-                num =int(arg)
+                num = int(arg)
                 score.append(num)
             except ValueError:
                 print(f"Invalid parameter: '{arg}'")
         if len(score) == 0:
-            print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ")
+            print(
+                "No scores provided. Usage: python3 "
+                "ft_score_analytics.py <score1>"" <score2> ")
         else:
             print(f"Scores processed: {score}")
             print(f"Total players: {len(score)}")
@@ -23,10 +29,6 @@ def main()->None:
             print(f"Low score: {min(score)}")
             print(f"Score range: {max(score)-min(score)}")
 
+
 if __name__ == "__main__":
     main()
-
-
-
-
-    
