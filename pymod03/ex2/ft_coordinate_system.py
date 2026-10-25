@@ -21,7 +21,7 @@ def get_player_pos() -> tuple:
                 error_found = True
                 break
         if not error_found:
-            return (float(parts[0]), float(parts[1]), float(parts[2]))
+            return (coords[0], coords[1], coords[2])
 
 
 def main() -> None:

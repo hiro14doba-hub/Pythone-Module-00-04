@@ -13,7 +13,7 @@ def main() -> None:
         print(f"Arguments received: {received_args}")
         i = 1
         for arg in sys.argv[1:]:
-            print(f"Argument {i}: {sys.argv[i]}")
+            print(f"Argument {i}: {arg}")
             i += 1
     print(f"Total arguments: {program_total}")
 
