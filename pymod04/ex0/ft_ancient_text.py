@@ -9,14 +9,14 @@ def main() -> None:
     print("=== Cyber Archives Recovery ===")
     file_name = sys.argv[1]
     print(f"Accessing file '{file_name}'")
-    print("---", "\n")
 
     file: IO[str] | None = None
     content = ""
     try:
         file = open(file_name, 'r')
         content = file.read()
-        print(content, end='')
+        print("---", "\n")
+        print(content)
         file.close()
         print("---")
         print(f"File '{file_name}' closed.")

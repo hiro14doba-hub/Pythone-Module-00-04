@@ -9,13 +9,13 @@ def main() -> None:
     print("=== Cyber Archives Recovery & Preservation ===")
     file_name = sys.argv[1]
     print(f"Accessing file '{file_name}'")
-    print("---", "\n")
 
     file: IO[str] | None = None
     content = ""
     try:
         file = open(file_name, 'r')
         content = file.read()
+        print("---", "\n")
         print(content)
         file.close()
         print("---")
@@ -41,7 +41,7 @@ def main() -> None:
         out_file = open(dest_name, 'w')
         out_file.write(trans_content)
         out_file.close()
-        print("Data saved in file 'new_fragment.txt'.")
+        print(f"Data saved in file '{dest_name}'.")
     except Exception as e:
         print(f"Error saving file '{dest_name}': {e}")
 

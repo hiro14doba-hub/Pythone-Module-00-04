@@ -22,14 +22,14 @@ def main() -> None:
     print(secure_archive("/not/existing/file", "read", ""))
 
     print("Using 'secure_archive' to read from an inaccessible file:")
-    print(secure_archive("/etc/master.passwd", "read", ""))
+    print(secure_archive("men.txt", "read", ""))
 
     print("Using 'secure_archive' to read from a regular file:")
     print(secure_archive("ancient_fragment.txt", "read", ""))
 
     print("Using 'secure_archive' "
           "to write previous content to a new file:")
-    print(secure_archive("mk.txt", "write", "Mission complete!!!!"))
+    print(secure_archive("secure_archive", "write", "Mission complete!!!!"))
 
 
 if __name__ == "__main__":
