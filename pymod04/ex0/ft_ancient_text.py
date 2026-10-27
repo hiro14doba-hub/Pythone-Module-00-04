@@ -1,21 +1,22 @@
 import sys
-import typing
 from typing import IO
-def main()->None:
-    if len(sys.argv)!=2:
+
+
+def main() -> None:
+    if len(sys.argv) != 2:
         print("Usage: ft_ancient_text.py <file>")
         return
     print("=== Cyber Archives Recovery ===")
     file_name = sys.argv[1]
     print(f"Accessing file '{file_name}'")
-    print(f"---","\n")
+    print("---", "\n")
 
     file: IO[str] | None = None
     content = ""
     try:
-        file = open(file_name,'r')
+        file = open(file_name, 'r')
         content = file.read()
-        print(content)
+        print(content, end='')
         file.close()
         print("---")
         print(f"File '{file_name}' closed.")
@@ -23,6 +24,6 @@ def main()->None:
         print(f"Error opening file '{file_name}': {e}")
         return
 
+
 if __name__ == "__main__":
     main()
-    
